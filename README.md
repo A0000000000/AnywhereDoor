@@ -1,5 +1,5 @@
 # AnywhereDoor
-* 任意门项目：借助IM软件来实现内网服务打洞
+* 任意门：借助IM软件来实现内网服务打洞
 * 项目架构：
 ![架构](architecture.png)
 
