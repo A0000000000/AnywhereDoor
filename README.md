@@ -100,7 +100,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "1998"
+          value: "pwd"
         ports:
         - containerPort: 3306
         volumeMounts:
