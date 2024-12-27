@@ -61,6 +61,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-init-scripts
+  namespace: anywhere-door
 data:
   init.sql: |
     CREATE DATABASE anywhere_door;
@@ -69,6 +70,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: anywhere-door-mysql-pvc
+  namespace: anywhere-door
 spec:
   accessModes:
     - ReadWriteOnce
@@ -81,8 +83,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: anywhere-door-mysql-statefulset
+  namespace: anywhere-door
 spec:
-  serviceName: "anywhere-door-mysql-service"
   replicas: 1
   selector:
     matchLabels:
@@ -98,7 +100,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "pwd"
+          value: "1998"
         ports:
         - containerPort: 3306
         volumeMounts:
@@ -119,6 +121,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: anywhere-door-mysql-service
+  namespace: anywhere-door
   labels:
     app: anywhere-door-mysql
 spec:
@@ -133,6 +136,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: anywhere-door-mysql-service-export
+  namespace: anywhere-door
   labels:
     app: anywhere-door-mysql
 spec:
