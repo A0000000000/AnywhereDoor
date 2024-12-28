@@ -11,6 +11,59 @@
 * 插件集合: https://github.com/A0000000000/AnywhereDoorPlugins
 * Imsdk集合: https://github.com/A0000000000/AnywhereDoorImsdks
 
+## 打包环境
+1. 安装docker
+```shell
+# 使用Arch Linux操作系统及yay作为AUR工具
+yay -S docker
+sudo gpasswd -a $USER docker
+sudo systemctl enable --now docker
+```
+
+2. 配置docker
+```shell
+# 创建docker配置文件
+cd /etc
+sudo mkdir docker
+cd docker
+touch daemon.json
+```
+```json
+{
+    "insecure-registries": ["本地registery地址"],
+    "registry-mirrors": [
+	    "https://docker.unsee.tech",
+	    "https://dockerpull.org",
+	    "https://dockerhub.icu"
+    ]
+}
+```
+
+3. 安装buildx
+```shell
+cd $HOME
+mkdir .docker
+cd .docker
+mkdir cli-plugins
+cd cli-plugins
+wget https://github.com/docker/buildx/releases/download/v0.18.0/buildx-v0.18.0.linux-amd64
+mv buildx-v0.18.0.linux-amd64 docker-buildx
+chmod +x docker-buildx
+```
+
+4. 验证buildx
+```shell
+docker buildx version
+```
+
+5. 创建并使用构建器环境
+```shell
+# 创建构建器
+docker buildx create --name linux-amd64-builder  --driver docker-container --use
+# 确保构建器已启动
+docker buildx inspect --bootstrap linux-amd64-builder
+```
+
 
 ## 部署方法
 1. 本文档将指引用户进行基本的部署操作
