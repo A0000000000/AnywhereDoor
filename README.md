@@ -184,7 +184,9 @@ spec:
     targetPort: 3306
   selector:
     app: anywhere-door-mysql
----
+```
+4. 用户自己选择是否要将数据库服务暴露在集群外, 控制平面&后台管理不需要数据库服务对外暴露
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
