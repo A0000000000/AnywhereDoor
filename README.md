@@ -59,7 +59,7 @@ docker buildx version
 5. 创建并使用构建器环境
 ```shell
 # 创建构建器
-docker buildx create --name linux-amd64-builder  --driver docker-container --use
+docker buildx create --name linux-amd64-builder --driver docker-container --use
 # 确保构建器已启动
 docker buildx inspect --bootstrap linux-amd64-builder
 ```
