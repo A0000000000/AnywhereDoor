@@ -17,7 +17,7 @@
 2. 后续部署都依赖本文档部署的服务
 
 ### Docker Command Line
-1. 创建一个MySQL环境(可复用现有的数据库)(用户可自行选择是否要挂载数据库文件到宿主): `docker run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pwd 192.168.25.5:31100/mysql:1.0`
+1. 创建一个MySQL环境(可复用现有的数据库)(用户可自行选择是否要挂载数据库文件到宿主): `docker run -itd --name anywhere-door-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pwd --restart=always 192.168.25.5:31100/mysql:1.0`
 2. 创建一个名字叫做`anywhere-door`的数据库: `CREATE DATABASE anywhere_door;`
 
 
