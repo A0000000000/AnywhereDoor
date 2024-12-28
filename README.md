@@ -26,7 +26,7 @@ sudo systemctl enable --now docker
 cd /etc
 sudo mkdir docker
 cd docker
-touch daemon.json
+sudo touch daemon.json
 ```
 ```json
 {
