@@ -10,6 +10,7 @@
 * 后台管理: https://github.com/A0000000000/AnywhereDoorManager
 * 插件集合: https://github.com/A0000000000/AnywhereDoorPlugins
 * Imsdk集合: https://github.com/A0000000000/AnywhereDoorImsdks
+* 后台管理WebUI: https://github.com/A0000000000/anywhere-door-manager-webui
 
 ## 打包环境
 1. 安装docker
