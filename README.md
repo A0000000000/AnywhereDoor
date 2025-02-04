@@ -3,6 +3,11 @@
 * 项目架构：
 ![架构](architecture.png)
 
+## 效果
+![后台管理UI](webui.jpg)
+![Aria2&Glances插件使用](aria2&glances.jpg)
+![PVE插件使用](pve.jpg)
+![K8s插件使用](k8s.jpg)
 
 ## 模块地址:
 * 项目地址: https://github.com/A0000000000/AnywhereDoor
