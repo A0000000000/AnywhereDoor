@@ -209,3 +209,7 @@ spec:
   selector:
     app: anywhere-door-mysql
 ```
+
+
+### Helm Chart快速部署
+* https://github.com/A0000000000/AnywhereDoorHelmChart
