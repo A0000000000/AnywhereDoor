@@ -75,16 +75,16 @@ docker buildx inspect --bootstrap linux-amd64-builder
 1. 本文档将指引用户进行基本的部署操作
 2. 后续部署都依赖本文档部署的服务
 
-### Helm Chart快速部署(适用于使用Kubernetes+Helm的用户并且需要部署所有容器的部署方式)
+### 1. Helm Chart快速部署(适用于使用Kubernetes+Helm的用户并且需要部署所有容器的部署方式)
 * https://github.com/A0000000000/AnywhereDoorHelmChart
 
 
-### Docker Command Line(适用于使用Docker用户的部署方式)
+### 2. Docker Command Line(适用于使用Docker用户的部署方式)
 1. 创建一个MySQL环境(可复用现有的数据库)(用户可自行选择是否要挂载数据库文件到宿主): `docker run -itd --name anywhere-door-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pwd --restart=always 192.168.25.5:31100/mysql:1.0`
 2. 创建一个名字叫做`anywhere-door`的数据库: `CREATE DATABASE anywhere_door;`
 
 
-### Kubernetes(使用于使用Kubernetes用户的部署方式)
+### 3. Kubernetes(使用于使用Kubernetes用户的部署方式)
 1. 推荐：创建一个命名空间, 专门运行AnywhereDoor相关容器
 ```yaml
 apiVersion: v1
